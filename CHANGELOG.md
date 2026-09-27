@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 2026-09-27
+
+### git/ignore（新規）
+
+- Git のグローバル除外設定（`~/.config/git/ignore`）を dotfiles で管理し、symlink で反映する。内容は `.claude/worktrees/`（`claude --worktree` の作業領域）と `.DS_Store`。
+
+### README.md
+
+- **変更**：置き場所を `~/dotfiles` から ghq の標準ルート（`~/ghq/github.com/takachaya/dotfiles`）に変更し、セットアップ手順と Brewfile の更新手順のパスを合わせた
+- **追加**：構成表とセットアップ手順に `git/ignore`、ステータスラインを有効にする `settings.json` の設定例
+- **変更**：スキルの symlink を `ln -sfn` にした（再実行時に既存の symlink の中へ入れ子のリンクを作らないため）
+
 ## 2026-09-15
 
 ### claude/statusline-command.sh（新規・移動）

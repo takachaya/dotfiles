@@ -16,33 +16,50 @@
 | `claude/skills/grilling` | 計画・設計・提案を徹底的に質問して詰めるスキル | `~/.claude/skills/grilling` |
 | `claude/skills/handoff` | セッション引き継ぎプロンプト生成スキル | `~/.claude/skills/handoff` |
 | `claude/skills/tdd` | テスト駆動開発（Red-Green-Refactor）スキル | `~/.claude/skills/tdd` |
+| `git/ignore` | Git のグローバル除外設定 | `~/.config/git/ignore` |
 
 ## セットアップ
 
 新しいマシンに移行する際は以下を実行：
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
+# ghq の標準ルートに置く（ghq が未導入でも同じ場所になるよう git clone で指定）
+DOT=~/ghq/github.com/takachaya/dotfiles
+git clone https://github.com/takachaya/dotfiles.git $DOT
 
 # Homebrew パッケージの復元（App Store アプリを含めるなら先に App Store へサインインしておく）
-brew bundle --file=~/dotfiles/Brewfile
+brew bundle --file=$DOT/Brewfile
 
 # Claude Code 設定の symlink
-ln -sf ~/dotfiles/claude/CLAUDE.md ~/.claude/CLAUDE.md
-ln -sf ~/dotfiles/claude/statusline-command.sh ~/.claude/statusline-command.sh
+mkdir -p ~/.claude/skills
+ln -sf $DOT/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf $DOT/claude/statusline-command.sh ~/.claude/statusline-command.sh
 for s in adr-manager exec-summary grill-me grilling handoff tdd; do
-  ln -sf ~/dotfiles/claude/skills/$s ~/.claude/skills/$s
+  ln -sfn $DOT/claude/skills/$s ~/.claude/skills/$s
 done
+
+# Git のグローバル除外設定の symlink
+mkdir -p ~/.config/git
+ln -sf $DOT/git/ignore ~/.config/git/ignore
 ```
 
-※ `de-ai-writing.md` の `@import` は symlink 先の実体パス（`~/dotfiles/claude/`）基準で解決されるため、個別の symlink は不要。
+※ `de-ai-writing.md` の `@import` は symlink 先の実体パス（`$DOT/claude/`）基準で解決されるため、個別の symlink は不要。
+
+※ ステータスラインを表示するには、`~/.claude/settings.json` に次を追加する（settings.json はマシンごとの設定があるため dotfiles では管理しない）。
+
+```json
+"statusLine": {
+  "type": "command",
+  "command": "bash ~/.claude/statusline-command.sh"
+}
+```
 
 ## Brewfile の更新
 
 現在のマシンの状態を書き出し直す：
 
 ```bash
-cd ~/dotfiles && brew bundle dump --no-vscode --force --file=Brewfile
+cd ~/ghq/github.com/takachaya/dotfiles && brew bundle dump --no-vscode --force --file=Brewfile
 ```
 
 - `--no-vscode`: VSCode 拡張は対象外（Settings Sync 側で管理）
