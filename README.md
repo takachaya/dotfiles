@@ -16,6 +16,7 @@
 | `claude/skills/grilling` | 計画・設計・提案を徹底的に質問して詰めるスキル | `~/.claude/skills/grilling` |
 | `claude/skills/handoff` | セッション引き継ぎプロンプト生成スキル | `~/.claude/skills/handoff` |
 | `claude/skills/tdd` | テスト駆動開発（Red-Green-Refactor）スキル | `~/.claude/skills/tdd` |
+| `herdr/setup.md` | herdr（AIエージェント向けターミナル多重化ツール）の導入・設定メモ | なし |
 | `git/ignore` | Git のグローバル除外設定 | `~/.config/git/ignore` |
 
 ## セットアップ

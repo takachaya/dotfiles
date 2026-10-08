@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 2026-10-08
+
+### herdr/setup.md（新規）
+
+- herdr（AIエージェント向けターミナル多重化ツール）の導入手順とサイドバーの表示設定。同じフォルダの同じ tab に複数の Claude Code を並べると、既定の表示では全セッションが同じ名前になるため、端末タイトル（`/rename` の名前）を表示する設定を記録した。
+
+### Brewfile
+
+- **追加**：`brew "herdr"`
+
+### README.md
+
+- **追加**：構成表に `herdr/setup.md` の行
+
 ## 2026-09-27
 
 ### git/ignore（新規）

@@ -5,6 +5,8 @@ brew "awscli"
 brew "gh"
 # Remote repository management made easy
 brew "ghq"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
