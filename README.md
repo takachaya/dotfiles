@@ -18,6 +18,7 @@
 | `claude/skills/tdd` | テスト駆動開発（Red-Green-Refactor）スキル | `~/.claude/skills/tdd` |
 | `herdr/setup.md` | herdr（AIエージェント向けターミナル多重化ツール）の導入・設定メモ | なし |
 | `git/ignore` | Git のグローバル除外設定 | `~/.config/git/ignore` |
+| `keychron/k11-max.json` | Keychron K11 Max のキーマップ（Keychron Launcher で読み込む） | なし（キーボード本体に書き込む） |
 
 ## セットアップ
 

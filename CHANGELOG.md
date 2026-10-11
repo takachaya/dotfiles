@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2026-10-11
+
+### keychron/k11-max.json（新規）
+
+- Keychron K11 Max のキーマップを Keychron Launcher から書き出して保存した。キーボードの故障・買い替えやファームウェア更新の後に読み込んで戻すため。Mac レイヤーだけ変更している：Caps Lock の位置を Control、左右 Command を短押しで英数／かな（mod-tap）。Windows レイヤーは初期配置のまま。
+
+### README.md
+
+- **追加**：構成表に `keychron/k11-max.json`
+
 ## 2026-10-08
 
 ### herdr/setup.md（新規）
